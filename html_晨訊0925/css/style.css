@@ -1,0 +1,474 @@
+@charset "UTF-8";
+
+/* ==============================
+   Reset / Global
+============================== */
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #374151;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding-bottom: 34px;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  margin: 15px 0;
+}
+
+td {
+  padding: 5px 4px;
+}
+
+.container {
+  width: min(100%, 720px);
+  margin-inline: auto;
+  overflow: hidden;
+  /* padding-inline: clamp(16px, 4vw, 24px); */
+}
+
+/* ==============================
+   Header
+============================== */
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 720px;
+  padding: 20px;
+  background: #fff;
+  border-bottom: 3px solid #00367c;
+  box-sizing: border-box;
+}
+
+.header-logo {
+  width: 180px;
+  margin: auto;
+}
+
+.header-logo img {
+  display: block;
+  max-width: 55%;
+  transition: 0.3s ease all;
+  position: relative;
+  z-index: 3;
+  margin: auto;
+}
+
+/* 重置和基礎樣式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body.dark-bg {
+  background-color: #02367c;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* loading圖 */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffffd1;
+  z-index: 10;
+}
+
+
+/* 旋轉動畫 */
+.loading-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 主容器 */
+.app-container {
+  min-height: 100vh;
+  position: fixed;
+}
+
+@media screen and (max-width:430px) {
+  .app-container {
+    top: 100px;
+  }
+
+}
+
+@media screen and (max-width:375px) {
+  .app-container {
+    top: 90px;
+  }
+
+}
+
+
+/* 內容包裝器 - 桌機版兩側留空 */
+.content-wrapper {
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+@media screen and (max-width:760px) {
+  .content-wrapper {
+    max-width: 100%;
+  }
+}
+
+/* 選單容器 */
+.tab-container {
+  position: fixed;
+  top: 67px;
+  width: 720px;
+  z-index: 3;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  padding: 5px 5px;
+}
+
+
+/* 選單按鈕 */
+.tab-button {
+  flex: 1;
+  /* 改為橢圓形按鈕設計 */
+  padding: 12px 32px;
+  margin: 8px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 25px;
+  background-color: #f8fafc;
+  color: #00367c;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #00367c;
+}
+
+.tab-button:hover {
+  background-color: #005bac;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button.active {
+  background-color: #00367c;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgb(110 110 110 / 30%);
+}
+
+/* 移除底部線條，改用橢圓形設計 */
+.tab-button.active::after {
+  display: none;
+}
+
+/* 輪播區域 */
+.carousel-section {
+  top: 150px;
+  position: relative;
+}
+
+/* 輪播容器 */
+.carousel-container {
+  display: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-container.active {
+  display: block;
+}
+
+/* 輪播軌道 */
+.carousel-track {
+  display: flex;
+  gap: 12px;
+  padding: 0 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  overflow-x: auto;
+  /* 保留水平滾動給輪播 */
+  -webkit-overflow-scrolling: touch;
+  /* iOS 惯性滑動 */
+  overscroll-behavior-x: contain;
+  /* 防止滑出到整頁 */
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+/* 輪播幻燈片 */
+.carousel-slide {
+  flex: 0 0 auto;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  scroll-snap-align: start;
+  max-width: 90%;
+  /* 手機不超過畫面 */
+}
+
+.carousel-slide:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.carousel-slide:hover img {
+  transform: scale(1.02);
+}
+
+
+
+/* 第一張圖片露出第二張的效果 */
+.carousel-slide:first-child {
+  margin-left: 0;
+}
+
+
+
+/* 載入動畫 */
+.carousel-slide img {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* 響應式圖片 */
+.carousel-slide img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 圓形導航箭頭樣式 */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #374151;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.carousel-nav:hover {
+  background-color: #fe7575;
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.3);
+}
+
+.carousel-nav.prev {
+  left: 12px;
+}
+
+.carousel-nav.next {
+  right: 12px;
+}
+
+
+
+/* 添加底部連結按鈕樣式 */
+.slide-links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 3;
+  height: 10%;
+}
+
+.slide-link {
+  flex: 1;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 添加上下層連結按鈕樣式 */
+.slide-links-half {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 3;
+  height: 100%;
+  flex-direction: column;
+}
+
+.slide-link {
+  flex: 1;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* 限制輪播區塊本身，避免推出整頁水平滾動 */
+.carousel-section,
+.carousel-container,
+.carousel-track {
+  width: 100%;
+  /* 保證不超過螢幕寬度 */
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+
+
+/* 橫向 (landscape) 狀態 */
+@media screen and (orientation: landscape) {
+  body {
+    padding: 0 44px 21px 44px;
+    box-sizing: border-box;
+  }
+
+  .carousel-slide img {
+    padding-bottom: 155px;
+  }
+
+  .carousel-section,
+  .carousel-container,
+  .carousel-track {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+
+  .carousel-slide {
+    flex: 0 0 80%; /* 控制一排可見幾張 */
+  }
+
+  .app-container {
+    position: relative;
+  }
+}
+
+
+/* <= 820px 平板 */
+@media screen and (max-width: 820px) {
+  .tab-container,
+  .header {
+    width: 100%;
+  }
+}
+/* <= 640px 手機版調整 */
+@media screen and (max-width: 640px) {
+  .carousel-track {
+    padding: 0 16px;
+    gap: 12px;
+  }
+
+  .tab-button {
+    padding: 10px 24px;
+    margin: 6px;
+  }
+
+  .carousel-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-nav.prev {
+    left: 8px;
+  }
+
+  .carousel-nav.next {
+    right: 8px;
+  }
+
+  .slide-link {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+
+/* <= 460px 小手機 */
+@media screen and (max-width: 460px) {
+  .carousel-section {
+    top: 50px;
+  }
+
+  .carousel-slide {
+    flex: 0 0 300px;
+  }
+}
+/* <= 375px 極小螢幕 */
+@media screen and (max-width: 375px) {
+  .carousel-section {
+    top: 60px;
+  }
+}

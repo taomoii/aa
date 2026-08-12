@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+
+<head>
+  <!-- 載入追蹤碼js -->
+  <script>
+    let cacheID = new Date().getMilliseconds();
+    let Login_InternalScript = document.createElement('script');
+    Login_InternalScript.src = `https://event.kgi.com.tw/news/event/commonResources/js/trackingCode_0515.js?uid=` + cacheID;
+    document.head.appendChild(Login_InternalScript);
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#ffffff">
+  <!-- 禁止使用者點擊兩下放大效果 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>凱基證券-每日晨訊</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <link href="https://www.kgi.com.tw/media/assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="https://www.kgi.com.tw/media/assets/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="https://www.kgi.com.tw/media/assets/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+</head>
+
+<body>
+  <main class="container">
+
+    <!-- Loading 畫面 -->
+    <div id="loading">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 50 50" class="loading-icon">
+        <circle cx="25" cy="25" r="20" fill="none" stroke="#00367c" stroke-width="4" stroke-linecap="round"
+          stroke-dasharray="90,150" stroke-dashoffset="0" />
+      </svg>
+    </div>
+
+
+
+    <!-- 凱基證券logo -->
+    <div class="header">
+      <div class="header-logo">
+        <a href="https://www.kgi.com.tw/zh-tw/" title="凱基證券" target="_blank">
+          <img src="https://eventtest.kgi.com.tw/news/event/commonResources/images/logo.svg" alt="凱基證券">
+        </a>
+      </div>
+    </div>
+    <div class="app-container">
+      <div class="content-wrapper">
+        <!-- 頂部選單 -->
+        <div class="tab-container">
+          <button class="tab-button active" data-tab="gallery1">
+            台股
+          </button>
+          <button class="tab-button" data-tab="gallery2">
+            美股
+          </button>
+        </div>
+
+        <!-- 圖片輪播區域 -->
+        <div class="carousel-section">
+          <!-- 第一組圖片輪播 -->
+          <div class="carousel-container active" id="gallery1">
+            <button class="carousel-nav prev" data-direction="prev">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15,18 9,12 15,6"></polyline>
+              </svg>
+            </button>
+            <button class="carousel-nav next" data-direction="next">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,18 15,12 9,6"></polyline>
+              </svg>
+            </button>
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <img src="images/tw_1.JPG" alt="台股_1" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/tw_2.JPG" alt="台股_2" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/tw_3.JPG" alt="台股_3" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/tw_4.JPG" alt="台股_4" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/tw_5.JPG" alt="台股_5" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link left"></a>
+                  <a href="#" class="slide-link right"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/tw_6.JPG" alt="台股_6" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link left"></a>
+                  <a href="#" class="slide-link right"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/tw_7.JPG" alt="台股_7" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link left"></a>
+                  <a href="#" class="slide-link right"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/tw_8.JPG" alt="台股_8" loading="lazy">
+                <div class="slide-links-half">
+                  <a href="#" class="slide-link top"></a>
+                  <a href="#" class="slide-link down"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/tw_9.JPG" alt="台股_9" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link left"></a>
+                  <a href="#" class="slide-link right"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 第二組圖片輪播 -->
+          <div class="carousel-container" id="gallery2">
+            <button class="carousel-nav prev" data-direction="prev">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15,18 9,12 15,6"></polyline>
+              </svg>
+            </button>
+            <button class="carousel-nav next" data-direction="next">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,18 15,12 9,6"></polyline>
+              </svg>
+            </button>
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <img src="images/us_1.JPG" alt="美股_1" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/us_2.JPG" alt="美股_2" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/us_3.JPG" alt="美股_3" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/us_4.JPG" alt="美股_4" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/us_5.JPG" alt="美股_5" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link left"></a>
+                  <a href="#" class="slide-link right"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/us_6.JPG" alt="美股_6" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link left"></a>
+                  <a href="#" class="slide-link right"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/us_7.JPG" alt="美股_7" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link left"></a>
+                  <a href="#" class="slide-link right"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/us_8.JPG" alt="美股_8" loading="lazy">
+                <div class="slide-links-half">
+                  <a href="#" class="slide-link top"></a>
+                  <a href="#" class="slide-link down"></a>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/us_9.JPG" alt="美股_9" loading="lazy">
+                <div class="slide-links">
+                  <a href="#" class="slide-link left"></a>
+                  <a href="#" class="slide-link right"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="js/script.js"></script>
+  </main>
+</body>
+
+</html>

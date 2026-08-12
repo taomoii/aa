@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+/* ==============================
+   Reset / Global
+============================== */
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, "Noto Serif SC", "Noto Sans TC", sans-serif;
+  
+  color: #3a3a3a;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+p { margin: 15px 0; }
+td { padding: 10px 4px; }
+
+.container {
+  width: min(100%, 720px);
+  margin-inline: auto;
+  overflow: hidden;
+  /* padding-inline: clamp(16px, 4vw, 24px); */
+}
+
+/* ==============================
+   Header
+============================== */
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 720px;
+  padding: 20px;
+  background: #fff;
+  border-bottom: 3px solid #00367c;
+  box-sizing: border-box;
+}
+.header-logo {
+  width: 180px;
+  margin: auto;
+}
+.header-logo img {
+  display: block;
+  max-width: 100%;
+  transition: 0.3s ease all;
+  position: relative;
+  z-index: 3;
+}
+
+/* ==============================
+   Icons
+============================== */
+.icon-check,
+.icon-xmark {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.icon-check  { background-image: url("../images/icon-check.svg"); }
+.icon-xmark  { background-image: url("../images/icon-xmark.svg"); }
+
+/* ==============================
+   Tables
+============================== */
+section.table-main,
+section.table-serve,
+section.table-event {
+  margin: 2vh 0;
+}
+.table-main-all { margin-top: 110px; }
+
+.chart-table-main,
+.chart-table-serve,
+.chart-table-event {
+  width: 95%;
+  margin: auto;
+  text-align: center;
+  border-radius: 15px;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  font-size: 18px;
+  position: relative;
+}
+.chart-table-main { border: 1px solid #00367c; }
+.chart-table-serve { border: 1px solid #a0906f; }
+.chart-table-event { border: 1px solid #cb992d; }
+
+/* table cell */
+.chart-table-main td:first-child { width: 27%; border: none; overflow: hidden;}
+.chart-table-main td:nth-child(2) { border: none; }
+.chart-table-serve td:first-child,
+.chart-table-event td:first-child { border: none; }
+
+/* table colors */
+td.chart-table-blue-1 {
+  background: #00367c;
+  color: #fff;
+  border-left: 1px solid #fff;
+}
+td.chart-table-blue-2 {
+  background: linear-gradient(90deg, #00367c 60%, #009ce5 90%);
+  color: #fff;
+  border-left: 1px solid #fff;
+}
+.chart-table-grey { background: #f7f7f7; }
+
+td.chart-table-brown {
+  background: linear-gradient(180deg, #a0906f 60%, #c5b494 90%);
+  color: #fff;
+  border-left: 1px solid #fff;
+  padding: 10px;
+}
+td.chart-table-golden {
+  background: linear-gradient(180deg, #cb992d 60%, #e5c17d 90%);
+  color: #fff;
+  border-left: 1px solid #fff;
+  padding: 10px;
+}
+
+/* table elements */
+span.chart-table-tit {
+  background: linear-gradient(90deg, #00367c 60%, #009ce5 90%);
+  padding: 5px 5px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 18px;
+}
+a.chart-table-a {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 5px 8px;
+  border-radius: 30px;
+  color: #fff;
+  background: linear-gradient(90deg, #f15a21 60%, #ffdb00 100%);
+  box-shadow: 0px 3px 0px #481400, 0 3px 3px rgba(0, 0, 0, .28);
+  font-size: 18px;
+}
+
+/* ==============================
+   Icon Decorations
+============================== */
+.icon-main {
+  position: relative;
+  left: 56%;
+  bottom: -5.7vh;
+  max-width: 100%;
+  transform: translate(-50%, -50%);
+}
+.icon-main-2 {
+  position: absolute;
+  top: 0.7vh;
+  left: 7.5%;
+  z-index: 2;
+  max-width: 13%;
+  animation: jump 3s ease-in-out infinite 0.5s;
+}
+
+
+/* Animation */
+@keyframes jump {
+  0%, 80%, 90%, 100% { transform: scale(1); }
+  85%, 95% { transform: scale(1.1); }
+}
+
+/* ==============================
+   Media Queries
+============================== */
+
+
+@media screen and (max-width: 720px) {
+  .header { width: 100%; }
+}
+
+@media screen and (max-width: 390px) {
+  .chart-table-main,
+  .chart-table-serve,
+  .chart-table-event,
+  span.chart-table-tit,
+  a.chart-table-a  { font-size: 16px; }
+}
+@media screen and (max-width: 375px) {
+  .chart-table-main,
+  .chart-table-serve,
+  .chart-table-event,
+  span.chart-table-tit,
+  a.chart-table-a { font-size: 15px; }
+}
+@media screen and (max-width: 350px) {
+  .chart-table-main,
+  .chart-table-serve,
+  .chart-table-event,
+  span.chart-table-tit,
+  a.chart-table-a { font-size: 14px; }
+}
+
