@@ -146,10 +146,6 @@ body.dark-bg {
   }
 }
 
-/* ========================================
-   問卷結果區塊
-======================================== */
-
 * {
   box-sizing: border-box;
 }
@@ -227,8 +223,8 @@ body.dark-bg {
 
 .ranking-item {
   display: grid;
-  grid-template-columns: 34px 60px 92px minmax(100px, 1fr) 55px;
-  gap: 8px;
+  grid-template-columns: 34px 90px minmax(120px, 1fr) 75px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -241,24 +237,8 @@ body.dark-bg {
   color: #fff;
   font-size: 18px;
   font-weight: 800;
-  background: #06347f;
-  border-radius: 50%;
-}
-
-.ranking-item:nth-child(2) .ranking-number {
-  background: #0757ce;
-}
-
-.ranking-item:nth-child(3) .ranking-number {
   background: #3e85ed;
-}
-
-.ranking-item:nth-child(4) .ranking-number {
-  background: #71a5ee;
-}
-
-.ranking-item:nth-child(5) .ranking-number {
-  background: #89b2ec;
+  border-radius: 50%;
 }
 
 .ranking-name {
@@ -266,15 +246,6 @@ body.dark-bg {
   font-size: 18px;
   font-weight: 700;
   white-space: nowrap;
-}
-
-.ranking-icon {
-  display: block;
-  width: 60px;
-  min-width: 60px;
-  max-width: 60px;
-  height: 60px;
-  object-fit: contain;
 }
 
 .ranking-progress {
@@ -307,7 +278,7 @@ body.dark-bg {
 
 .ranking-item:nth-child(1) .ranking-bar {
   width: 38%;
-  background: linear-gradient(90deg, #002e8d, #3188ff);
+  background: linear-gradient(90deg, #0750c6, #51a6ff);
 }
 
 .ranking-item:nth-child(2) .ranking-bar {
@@ -317,17 +288,17 @@ body.dark-bg {
 
 .ranking-item:nth-child(3) .ranking-bar {
   width: 21%;
-  background: linear-gradient(90deg, #3588ee, #6fb1f8);
+  background: linear-gradient(90deg, #0750c6, #51a6ff);
 }
 
 .ranking-item:nth-child(4) .ranking-bar {
   width: 12%;
-  background: linear-gradient(90deg, #82aef0, #afd5fd);
+  background: linear-gradient(90deg, #0750c6, #51a6ff);
 }
 
 .ranking-item:nth-child(5) .ranking-bar {
   width: 8%;
-  background: linear-gradient(90deg, #94bbf5, #c4ddf8);
+  background: linear-gradient(90deg, #0750c6, #51a6ff);
 }
 
 .ranking-value {
@@ -374,15 +345,8 @@ body.dark-bg {
   }
 
   .ranking-item {
-    grid-template-columns: 30px 60px 78px minmax(60px, 1fr) 48px;
+    grid-template-columns: 30px 78px minmax(120px, 1fr) 75px;
     gap: 6px;
-  }
-
-  .ranking-icon {
-    width: 60px;
-    min-width: 60px;
-    max-width: 60px;
-    height: 60px;
   }
 
   .ranking-number {
@@ -435,15 +399,8 @@ body.dark-bg {
   }
   
   .ranking-item {
-    display: grid;
-    grid-template-columns:
-      28px
-      42px
-      82px
-      minmax(50px, 1fr)
-      42px;
-    column-gap: 5px;
-    align-items: center;
+    grid-template-columns: 27px 72px minmax(70px, 1fr) 54px;
+    gap: 6px;
   }
 
   .ranking-number {
@@ -451,16 +408,7 @@ body.dark-bg {
     height: 26px;
     font-size: 14px;
   }
-
-  .ranking-icon {
-    display: block;
-    width: 42px;
-    min-width: 42px;
-    max-width: 42px;
-    height: 42px;
-    object-fit: contain;
-  }
-
+  
   .ranking-name {
     overflow: visible;
     color: #00377b;
@@ -494,24 +442,7 @@ body.dark-bg {
     padding-right: 8px;
     padding-left: 8px;
   }
-
-  .ranking-item {
-    grid-template-columns:
-      27px
-      40px
-      80px
-      minmax(45px, 1fr)
-      40px;
-    column-gap: 4px;
-  }
-
-  .ranking-icon {
-    width: 40px;
-    min-width: 40px;
-    max-width: 40px;
-    height: 40px;
-  }
-
+  
   .ranking-name {
     font-size: 15px;
   }
