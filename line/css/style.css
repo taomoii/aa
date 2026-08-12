@@ -9,7 +9,7 @@ html {
 
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Serif SC", "Noto Sans TC", sans-serif;
+  font-family: Arial, "Noto Serif SC", "Noto Sans TC", sans-serif;
   background-color: #ffffff;
   color: #374151;
   line-height: 1.6;
@@ -257,10 +257,6 @@ body.dark-bg {
   background: #71a5ee;
 }
 
-.ranking-item:nth-child(5) .ranking-number {
-  background: #89b2ec;
-}
-
 .ranking-name {
   color: #153d78;
   font-size: 18px;
@@ -317,16 +313,11 @@ body.dark-bg {
 
 .ranking-item:nth-child(3) .ranking-bar {
   width: 21%;
-  background: linear-gradient(90deg, #3588ee, #6fb1f8);
+  background: linear-gradient(90deg, #3e8dee, #7cb6f4);
 }
 
 .ranking-item:nth-child(4) .ranking-bar {
   width: 12%;
-  background: linear-gradient(90deg, #82aef0, #afd5fd);
-}
-
-.ranking-item:nth-child(5) .ranking-bar {
-  width: 8%;
   background: linear-gradient(90deg, #94bbf5, #c4ddf8);
 }
 
